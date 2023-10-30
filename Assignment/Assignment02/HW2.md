@@ -24,6 +24,10 @@ Find an expression for the conditional distribution $p(x_a|x_b)$ in which $x_c$ 
 
 
 
+
+
+
+
 ## Question 2
 
 Consider a joint distribution over the variable
@@ -52,7 +56,13 @@ Is the final result symmetric and positive definite (provided the sample covaria
 >
 > *(a)* To find the maximum likelihood solution for the covariance matrix of a multivariate Gaussian, we need to maximize the log likelihood function with respect to $\Sigma$. The log likelihood function is given by
 >
-> $$\mathrm{ln}p(\mathbf{X}|\mu, \Sigma)=-\frac{ND}{2}\mathrm{ln}(2\pi)-\frac{N}{2}\mathrm{ln}|\Sigma|-\frac{1}{2}\sum^N_{n=1}(\mathbf{x}_n-\mu)^\mathrm{T}\Sigma^{-1}(\mathbf{x}_n-\mu).$$
+> $$
+> \mathrm{ln}p(\mathbf{X}|\mu, \Sigma)=
+> -\frac{ND}{2}\mathrm{ln}(2\pi)
+> -\frac{N}{2}\mathrm{ln}|\Sigma|
+> -\frac{1}{2}\sum^N_{n=1}(\mathbf{x}_n-\mu)^\mathrm{T}\Sigma^{-1}(\mathbf{x}_n-\mu).
+> $$
+> 
 >
 > *(b)* The derivative of the inverse of a matrix can be expressed as
 >
