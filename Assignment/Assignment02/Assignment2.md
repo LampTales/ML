@@ -185,7 +185,7 @@ $$
 +a_{N-1}
 \frac{1}{2} \Sigma^{-2}_{N-1} ((\mathbf{x}_{N}-\mu)(\mathbf{x}_{N}-\mu)^{T}-\Sigma_{N-1})
 $$
-Comparing the two fornulas we can get know that:
+Comparing the two formulas we can get know that:
 $$
 a_{N-1}=\frac{2}{N}\Sigma^{-2}_{N-1}
 $$
@@ -224,7 +224,6 @@ $$
 \\\\
 \text{where }\mu_{ML} = \frac{1}{N}\sum^{N}_{n=1}x_{n}
 $$
-
 
 
 
