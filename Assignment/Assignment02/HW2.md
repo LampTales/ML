@@ -63,14 +63,13 @@ Is the final result symmetric and positive definite (provided the sample covaria
 > -\frac{1}{2}\sum^N_{n=1}(\mathbf{x}_n-\mu)^\mathrm{T}\Sigma^{-1}(\mathbf{x}_n-\mu).
 > $$
 > 
->
-> *(b)* The derivative of the inverse of a matrix can be expressed as
->
-> $$\frac{\partial}{\partial x}(\mathbf{A}^{-1})=-\mathbf{A}^{-1} \frac{\partial\mathbf{A}}{\partial x} \mathbf{A}^{-1}$$
->
-> We have the following properties
->
-> $$\frac{\partial}{\partial \mathbf{A}} \mathrm{Tr}(\mathbf{A}) = \mathbf{I}, \quad \frac{\partial}{\partial \mathbf{A}} \mathrm{ln}|\mathbf{A}| = (\mathbf{A^{-1}})^\mathrm{T}.$$
+>*(b)* The derivative of the inverse of a matrix can be expressed as
+> 
+>$$\frac{\partial}{\partial x}(\mathbf{A}^{-1})=-\mathbf{A}^{-1} \frac{\partial\mathbf{A}}{\partial x} \mathbf{A}^{-1}$$
+> 
+>We have the following properties
+> 
+>$$\frac{\partial}{\partial \mathbf{A}} \mathrm{Tr}(\mathbf{A}) = \mathbf{I}, \quad \frac{\partial}{\partial \mathbf{A}} \mathrm{ln}|\mathbf{A}| = (\mathbf{A^{-1}})^\mathrm{T}.$$
 
 
 

@@ -18,7 +18,7 @@ $$
 \Sigma=\left( \begin{array}{c} \Sigma_{aa} & \Sigma_{ab} \\  
 								\Sigma_{ba} & \Sigma_{bb} \end{array} \right)
 $$
-Then, according to the conditional Gaussian distributions, $p(x_{a}|x_{b})$ is a Faussian distribution with arguments as follows:
+Then, according to the conditional Gaussian distributions, $p(x_{a}|x_{b})$ is a Gaussian distribution with arguments as follows:
 $$
 \mu_{a|b}=\mu_{a}+\Sigma_{ab}\Sigma^{-1}_{bb}(x_{b}-\mu_{b}), \quad 
 \Sigma_{a|b}=\Sigma_{aa}-\Sigma_{ab}\Sigma^{-1}_{bb}\Sigma_{ba}
@@ -82,7 +82,7 @@ N\mathrm{Tr}[\Sigma^{-1}\mathrm{S}]
 =-N\mathrm{Tr}[\Sigma^{-1}\frac{\partial\Sigma}{\partial\Sigma_{ij}}\Sigma^{-1}\mathrm{S}]  \\
 =-N\mathrm{Tr}[\frac{\partial\Sigma}{\partial\Sigma_{ij}}\Sigma^{-1}\mathrm{S}\Sigma^{-1}]  
 \\\\
-\text{As } \Sigma_{ij} = \Sigma_{ji},  \\
+\text{So that:}\\
 
 \frac{\partial}{\partial\Sigma_{ij}}N\mathrm{Tr}[\Sigma^{-1}\mathrm{S}]
 =-N(\Sigma^{-1}\mathrm{S}\Sigma^{-1})_{ij}
@@ -103,11 +103,21 @@ $$
 \Sigma = S
 $$
 
-
-### Lack something
-
-
-
+To prove that the result is symmetric:
+$$
+\Sigma^{\mathrm{T}}
+=\frac{1}{N}\sum^N_{n=1}((\mathbf{x}_n-\mu)(\mathbf{x}_n-\mu)^\mathrm{T})^\mathrm{T}
+=\frac{1}{N}\sum^N_{n=1}((\mathbf{x}_n-\mu)(\mathbf{x}_n-\mu)^\mathrm{T})
+=\Sigma
+$$
+To prove that the result is positive definite:
+$$
+\text{for } \forall \mathbf{x} \neq 0:
+\\
+\mathbf{x}^\mathrm{T}\Sigma\mathbf{x}
+=\frac{1}{N}\sum^N_{n=1}\mathbf{x}^\mathrm{T}  (\mathbf{x}_n-\mu) (\mathbf{x}_n-\mu)^\mathrm{T}\mathbf{x}
+=\frac{1}{N}\sum^N_{n=1}((\mathbf{x}_n-\mu)^\mathrm{T}\mathbf{x})^{T}((\mathbf{x}_n-\mu)^\mathrm{T}\mathbf{x})>0
+$$
 
 
 
@@ -185,7 +195,7 @@ $$
 +a_{N-1}
 \frac{1}{2} \Sigma^{-2}_{N-1} ((\mathbf{x}_{N}-\mu)(\mathbf{x}_{N}-\mu)^{T}-\Sigma_{N-1})
 $$
-Comparing the two fornulas we can get know that:
+Comparing the two formulas we can get know that:
 $$
 a_{N-1}=\frac{2}{N}\Sigma^{-2}_{N-1}
 $$
@@ -224,7 +234,6 @@ $$
 \\\\
 \text{where }\mu_{ML} = \frac{1}{N}\sum^{N}_{n=1}x_{n}
 $$
-
 
 
 
