@@ -170,8 +170,8 @@ for epoch in range(1, n_epochs + 1):
         optimizer.step()
 
         #将本step结果进行可视化处理
-        processBar.set_description("[%d/%d] Loss: %.4f, Acc: %.4f" % 
-                                    (epoch,n_epochs,loss.item(),accuracy.item()))
+        # processBar.set_description("[%d/%d] Loss: %.4f, Acc: %.4f" % 
+        #                             (epoch,n_epochs,loss.item(),accuracy.item()))
 
         totalTrainLoss+= loss
         
@@ -191,11 +191,11 @@ for epoch in range(1, n_epochs + 1):
             testAccuracy = correct/float(totalSize)
             testLoss = totalLoss/float(len(test_loader))
             trainLoss = totalTrainLoss/float(len(train_loader))
-            history['Train Loss'].append(trainLoss.item())
-            history['Test Loss'].append(testLoss.item())
-            history['Test Accuracy'].append(testAccuracy.item())
-            processBar.set_description("[%d/%d] Loss: %.4f, Acc: %.4f, Test Loss: %.4f, Test Acc: %.4f" % 
-                                   (epoch,n_epochs,loss.item(),accuracy.item(),testLoss.item(),testAccuracy.item()))
+            # history['Train Loss'].append(trainLoss.item())
+            # history['Test Loss'].append(testLoss.item())
+            # history['Test Accuracy'].append(testAccuracy.item())
+            # processBar.set_description("[%d/%d] Loss: %.4f, Acc: %.4f, Test Loss: %.4f, Test Acc: %.4f" % 
+            #                        (epoch,n_epochs,loss.item(),accuracy.item(),testLoss.item(),testAccuracy.item()))
     processBar.close()
 
 
