@@ -11,7 +11,7 @@ import numpy as np
 
 
 # TRAINING HYPERPARAMETERS: 
-n_epochs = 5           # How many passes through the training data  
+n_epochs = 10           # How many passes through the training data  
 batch_size = 64  # Training batch size usually in [1,256]
 
 learning_rate = 0.01   # Learning rate for optimizer like SGD usually in [0.001, 0.1]
@@ -22,6 +22,7 @@ torch.manual_seed(random_seed)
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
+print(device)
 
 
 
@@ -122,7 +123,7 @@ import torch.optim as optim
 
 criterion = torch.nn.CrossEntropyLoss()
 #optimizer = torch.optim.Adam(net.parameters())
-#optimizer = optim.Adam(net.parameters(), lr=0.003)
+# optimizer = optim.Adam(net.parameters(), lr=0.003)
 optimizer = optim.SGD(net.parameters(), lr=learning_rate, momentum=0.5)
 
 
@@ -170,8 +171,8 @@ for epoch in range(1, n_epochs + 1):
         optimizer.step()
 
         #将本step结果进行可视化处理
-        # processBar.set_description("[%d/%d] Loss: %.4f, Acc: %.4f" % 
-        #                             (epoch,n_epochs,loss.item(),accuracy.item()))
+        processBar.set_description("[%d/%d] Loss: %.4f, Acc: %.4f" % 
+                                    (epoch,n_epochs,loss.item(),accuracy.item()))
 
         totalTrainLoss+= loss
         
@@ -191,11 +192,11 @@ for epoch in range(1, n_epochs + 1):
             testAccuracy = correct/float(totalSize)
             testLoss = totalLoss/float(len(test_loader))
             trainLoss = totalTrainLoss/float(len(train_loader))
-            # history['Train Loss'].append(trainLoss.item())
-            # history['Test Loss'].append(testLoss.item())
-            # history['Test Accuracy'].append(testAccuracy.item())
-            # processBar.set_description("[%d/%d] Loss: %.4f, Acc: %.4f, Test Loss: %.4f, Test Acc: %.4f" % 
-            #                        (epoch,n_epochs,loss.item(),accuracy.item(),testLoss.item(),testAccuracy.item()))
+            history['Train Loss'].append(trainLoss.item())
+            history['Test Loss'].append(testLoss.item())
+            history['Test Accuracy'].append(testAccuracy.item())
+            processBar.set_description("[%d/%d] Loss: %.4f, Acc: %.4f, Test Loss: %.4f, Test Acc: %.4f" % 
+                                   (epoch,n_epochs,loss.item(),accuracy.item(),testLoss.item(),testAccuracy.item()))
     processBar.close()
 
 
